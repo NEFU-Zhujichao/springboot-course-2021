@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mybatisexamples.example05.UserMapper05">
+    <resultMap id="userDTOResultMap" type="com.example.mybatisexamples.example05.UserDTO05">
+        <!-- 关联查询时，必须显式声明映射，automapping无效 -->
+        <id column="id" property="id" />
+        <result column="name" property="name" />
+        <result column="company" property="company" />
+        <!-- ofType，声明集合中元素类型；自动去掉前缀映射；无需声明集合类型 -->
+        <collection property="addresses"
+                    columnPrefix="a_"
+                    ofType="com.example.mybatisexamples.entity.Address"
+                    autoMapping="true">
+        </collection>
+    </resultMap>
+    <!-- 在接口中声明ID同名方法。 -->
+    <select id="getByXML2" resultMap="userDTOResultMap">
+        select u.*,
+               a.id a_id,
+               a.detail a_detail,
+               a.user_id a_user_id,
+               a.create_time a_create_time
+        from user u join address a on u.id=a.user_id
+        where u.id=#{uid}
+    </select>
+
+
+</mapper>
