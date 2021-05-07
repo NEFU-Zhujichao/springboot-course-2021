@@ -26,4 +26,9 @@ public class AspectTest {
     public void test_purchaseCar(){
         log.debug(userService.purchaseCar());
     }
+
+    @Test
+    public void test_addUser(){
+        userService.addUser();
+    }
 }

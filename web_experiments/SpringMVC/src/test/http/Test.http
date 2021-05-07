@@ -1,0 +1,26 @@
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "id": 5,
+  "username": "zhu2",
+  "password": "123"
+}
+
+###
+GET http://localhost:8080/api/index
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/2
+Accept: application/json
+
+###
+GET http://localhost:8080/api/users/100
+Accept: application/json
+
+###

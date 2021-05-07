@@ -1,10 +1,7 @@
 spring:
-  application:
-    name: springmvc-examples
   jackson:
     default-property-inclusion: non_null # 序列化时忽略空值属性
-server:
-  port: 8080
+
 logging:
   level:
     root: warn
@@ -14,5 +11,5 @@ logging:
     console: '%-5level %C.%M[%line] - %msg%n'
 
 my:
-  secretkey: R28K42ZEJ8LWRHU5
-  salt: 636eac2534bcfcb0 # 必须为16位16进制数
+  secretKey: R28K42ZEJ8LWRHU5
+  salt: 636eac2534bcfcb0

@@ -87,7 +87,7 @@
 在aspect下，创建支持运行时，类型及方法级，自定义注解MyInterceptor  
 在MyInterceptor注解中，创建权限枚举类型AuthorityType，声明若干权限
 在MyAspect切面类中，编写切入所有类型级方法级修饰的MyInterceptor注解，打印显示被切入方法的权限类型  
-为UserService添加自定义权限注解，在UserSerivce编写添加方法addUser()，添加自定义权限注解  
+为UserService添加自定义权限注解，在UserService编写添加方法addUser()，添加自定义权限注解  
 
 在测试类中，测试addUser()方法的执行是否被权限切面切入  
 
